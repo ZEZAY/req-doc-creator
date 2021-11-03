@@ -1,0 +1,8 @@
+= form_with model: project do |f|
+    div = f.label :status, "Status:"
+    div = f.select :status, Project.statuses.map { |key, value| [key.humanize, key] }
+    br
+    div = f.label :name, "Name:"
+    div = f.text_field :name, placeholder: 'Name'
+    br
+    div = f.submit 'Submit'
